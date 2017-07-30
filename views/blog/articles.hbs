@@ -1,0 +1,14 @@
+{{# each cikkek}}
+  <div class="row">
+    {{# each this }}
+      <div class="col-sm-6 col-md-3">
+        <div class="article">
+            <h3><a href="/blog/{{this._id}}">{{ this.title }}</a></h3>
+            <p>{{{ this.body }}}</p>
+            <p class="text-right"> <em>{{ this.author }}</em></p>
+            <p class="text-right">{{ this.date2 }}</p>
+          </div>
+      </div>
+    {{/each}}
+  </div>
+{{/each}}

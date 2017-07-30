@@ -1,0 +1,39 @@
+<h2>Regisztráció</h2>
+<div class="row">
+
+
+   <div class="col-md-4 col-md-offset-4">
+    {{# if hasErrors}}
+      <div class="alert alert-danger">
+        {{# each messages }}
+          <p>{{ this }}</p>
+        {{/each}}
+      </div>
+    {{/if}}
+    <form class="" action="/user/signup" method="post">
+      <div class="form-group">
+        <label for="name">Teljes név:</label>
+        <input type="name" class="form-control" name="name">
+      </div>
+      <div class="form-group">
+        <label for="username">Felhasználónév:</label>
+        <input type="username" class="form-control" name="username">
+      </div>
+      <div class="form-group">
+        <label for="email">E-mail:</label>
+        <input type="email" class="form-control" name="email">
+      </div>
+      <div class="form-group">
+        <label for="password">Jeljszó:</label>
+        <input type="password" class="form-control" name="password">
+      </div>
+      <div class="form-group">
+        <label for="password2">Jelszó újra:</label>
+        <input type="password" class="form-control" name="password2">
+      </div>
+      <input type="hidden" name="_csrf" value="{{  csrfToken }}">
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+
+</div>
+</div>

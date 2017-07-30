@@ -1,0 +1,26 @@
+<div class="container bgimg-1" id="home">
+  <div class="" style="white-space:nowrap;">
+    <span class="" id="para"></span>
+  </div>
+</div>
+{{# each cikkek}}
+  <div class="row">
+    {{# each this }}
+      <div class="col-sm-6 col-md-3">
+        {{#if this.type }}
+          <div class="article">
+            <h3><a href="/blog/{{this._id}}">{{ this.title }}</a></h3>
+            <p>{{{ this.body }}}</p>
+            <p class="text-right"> <em>{{ this.author }}</em></p>
+            <p class="text-right">{{ this.date2 }}</p>
+          </div>
+        {{else}}
+          <div class="news">
+            <h3><a href="/blog/{{this._id}}">{{ this.title }}</a></h3>
+            <p>{{{ this.body }}}</p>
+          </div>
+        {{/if}}
+      </div>
+    {{/each}}
+  </div>
+{{/each}}
